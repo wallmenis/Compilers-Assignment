@@ -17,7 +17,7 @@ public class MyCompiler {
         if(visitor.accumulator!=null) {					// Since we use the visitor recursively inside itself, we will print the output 
         	System.out.println("Result = " + visitor.accumulator);	// of the accumulator here.
         }
-        TreeViewer viewer = new TreeViewer(Arrays.asList(parser.getRuleNames()),tree); // I don't know if you need it
-        viewer.open();
+        //TreeViewer viewer = new TreeViewer(Arrays.asList(parser.getRuleNames()),tree); // I don't know if you need it
+        //viewer.open();
 	}
 }

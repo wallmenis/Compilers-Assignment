@@ -28,6 +28,18 @@ public class CalculatorBaseListener implements CalculatorListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterL3P(@NotNull CalculatorParser.L3PContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitL3P(@NotNull CalculatorParser.L3PContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterBASE_LOGIC_EXP(@NotNull CalculatorParser.BASE_LOGIC_EXPContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -35,6 +47,18 @@ public class CalculatorBaseListener implements CalculatorListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitBASE_LOGIC_EXP(@NotNull CalculatorParser.BASE_LOGIC_EXPContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterL1P(@NotNull CalculatorParser.L1PContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitL1P(@NotNull CalculatorParser.L1PContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -299,6 +323,18 @@ public class CalculatorBaseListener implements CalculatorListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitMODULUS_OP(@NotNull CalculatorParser.MODULUS_OPContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterMath_expression(@NotNull CalculatorParser.Math_expressionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitMath_expression(@NotNull CalculatorParser.Math_expressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

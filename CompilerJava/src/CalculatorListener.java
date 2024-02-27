@@ -20,6 +20,18 @@ public interface CalculatorListener extends ParseTreeListener {
 	 */
 	void exitOR_OP(@NotNull CalculatorParser.OR_OPContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code L3P}
+	 * labeled alternative in {@link CalculatorParser#level3prioritymath}.
+	 * @param ctx the parse tree
+	 */
+	void enterL3P(@NotNull CalculatorParser.L3PContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code L3P}
+	 * labeled alternative in {@link CalculatorParser#level3prioritymath}.
+	 * @param ctx the parse tree
+	 */
+	void exitL3P(@NotNull CalculatorParser.L3PContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code BASE_LOGIC_EXP}
 	 * labeled alternative in {@link CalculatorParser#logic_expression}.
 	 * @param ctx the parse tree
@@ -31,6 +43,18 @@ public interface CalculatorListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitBASE_LOGIC_EXP(@NotNull CalculatorParser.BASE_LOGIC_EXPContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code L1P}
+	 * labeled alternative in {@link CalculatorParser#level2prioritymath}.
+	 * @param ctx the parse tree
+	 */
+	void enterL1P(@NotNull CalculatorParser.L1PContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code L1P}
+	 * labeled alternative in {@link CalculatorParser#level2prioritymath}.
+	 * @param ctx the parse tree
+	 */
+	void exitL1P(@NotNull CalculatorParser.L1PContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code NAND_OP}
 	 * labeled alternative in {@link CalculatorParser#logic_expression}.
@@ -45,13 +69,13 @@ public interface CalculatorListener extends ParseTreeListener {
 	void exitNAND_OP(@NotNull CalculatorParser.NAND_OPContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code FACTORIAL_OP}
-	 * labeled alternative in {@link CalculatorParser#math_expression}.
+	 * labeled alternative in {@link CalculatorParser#level3prioritymath}.
 	 * @param ctx the parse tree
 	 */
 	void enterFACTORIAL_OP(@NotNull CalculatorParser.FACTORIAL_OPContext ctx);
 	/**
 	 * Exit a parse tree produced by the {@code FACTORIAL_OP}
-	 * labeled alternative in {@link CalculatorParser#math_expression}.
+	 * labeled alternative in {@link CalculatorParser#level3prioritymath}.
 	 * @param ctx the parse tree
 	 */
 	void exitFACTORIAL_OP(@NotNull CalculatorParser.FACTORIAL_OPContext ctx);
@@ -69,61 +93,61 @@ public interface CalculatorListener extends ParseTreeListener {
 	void exitXOR_OP(@NotNull CalculatorParser.XOR_OPContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code ROOT_OP}
-	 * labeled alternative in {@link CalculatorParser#math_expression}.
+	 * labeled alternative in {@link CalculatorParser#level3prioritymath}.
 	 * @param ctx the parse tree
 	 */
 	void enterROOT_OP(@NotNull CalculatorParser.ROOT_OPContext ctx);
 	/**
 	 * Exit a parse tree produced by the {@code ROOT_OP}
-	 * labeled alternative in {@link CalculatorParser#math_expression}.
+	 * labeled alternative in {@link CalculatorParser#level3prioritymath}.
 	 * @param ctx the parse tree
 	 */
 	void exitROOT_OP(@NotNull CalculatorParser.ROOT_OPContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code EULER_OP}
-	 * labeled alternative in {@link CalculatorParser#math_expression}.
+	 * labeled alternative in {@link CalculatorParser#math_base}.
 	 * @param ctx the parse tree
 	 */
 	void enterEULER_OP(@NotNull CalculatorParser.EULER_OPContext ctx);
 	/**
 	 * Exit a parse tree produced by the {@code EULER_OP}
-	 * labeled alternative in {@link CalculatorParser#math_expression}.
+	 * labeled alternative in {@link CalculatorParser#math_base}.
 	 * @param ctx the parse tree
 	 */
 	void exitEULER_OP(@NotNull CalculatorParser.EULER_OPContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code COTANGENT_OP}
-	 * labeled alternative in {@link CalculatorParser#math_expression}.
+	 * labeled alternative in {@link CalculatorParser#level3prioritymath}.
 	 * @param ctx the parse tree
 	 */
 	void enterCOTANGENT_OP(@NotNull CalculatorParser.COTANGENT_OPContext ctx);
 	/**
 	 * Exit a parse tree produced by the {@code COTANGENT_OP}
-	 * labeled alternative in {@link CalculatorParser#math_expression}.
+	 * labeled alternative in {@link CalculatorParser#level3prioritymath}.
 	 * @param ctx the parse tree
 	 */
 	void exitCOTANGENT_OP(@NotNull CalculatorParser.COTANGENT_OPContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code BASE_MATH_EXP}
-	 * labeled alternative in {@link CalculatorParser#math_expression}.
+	 * labeled alternative in {@link CalculatorParser#math_base}.
 	 * @param ctx the parse tree
 	 */
 	void enterBASE_MATH_EXP(@NotNull CalculatorParser.BASE_MATH_EXPContext ctx);
 	/**
 	 * Exit a parse tree produced by the {@code BASE_MATH_EXP}
-	 * labeled alternative in {@link CalculatorParser#math_expression}.
+	 * labeled alternative in {@link CalculatorParser#math_base}.
 	 * @param ctx the parse tree
 	 */
 	void exitBASE_MATH_EXP(@NotNull CalculatorParser.BASE_MATH_EXPContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code ADDITION_OP}
-	 * labeled alternative in {@link CalculatorParser#math_expression}.
+	 * labeled alternative in {@link CalculatorParser#level1prioritymath}.
 	 * @param ctx the parse tree
 	 */
 	void enterADDITION_OP(@NotNull CalculatorParser.ADDITION_OPContext ctx);
 	/**
 	 * Exit a parse tree produced by the {@code ADDITION_OP}
-	 * labeled alternative in {@link CalculatorParser#math_expression}.
+	 * labeled alternative in {@link CalculatorParser#level1prioritymath}.
 	 * @param ctx the parse tree
 	 */
 	void exitADDITION_OP(@NotNull CalculatorParser.ADDITION_OPContext ctx);
@@ -139,25 +163,25 @@ public interface CalculatorListener extends ParseTreeListener {
 	void exitStatement(@NotNull CalculatorParser.StatementContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code TANGENT_OP}
-	 * labeled alternative in {@link CalculatorParser#math_expression}.
+	 * labeled alternative in {@link CalculatorParser#level3prioritymath}.
 	 * @param ctx the parse tree
 	 */
 	void enterTANGENT_OP(@NotNull CalculatorParser.TANGENT_OPContext ctx);
 	/**
 	 * Exit a parse tree produced by the {@code TANGENT_OP}
-	 * labeled alternative in {@link CalculatorParser#math_expression}.
+	 * labeled alternative in {@link CalculatorParser#level3prioritymath}.
 	 * @param ctx the parse tree
 	 */
 	void exitTANGENT_OP(@NotNull CalculatorParser.TANGENT_OPContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code SUBTRACTION_OP}
-	 * labeled alternative in {@link CalculatorParser#math_expression}.
+	 * labeled alternative in {@link CalculatorParser#level1prioritymath}.
 	 * @param ctx the parse tree
 	 */
 	void enterSUBTRACTION_OP(@NotNull CalculatorParser.SUBTRACTION_OPContext ctx);
 	/**
 	 * Exit a parse tree produced by the {@code SUBTRACTION_OP}
-	 * labeled alternative in {@link CalculatorParser#math_expression}.
+	 * labeled alternative in {@link CalculatorParser#level1prioritymath}.
 	 * @param ctx the parse tree
 	 */
 	void exitSUBTRACTION_OP(@NotNull CalculatorParser.SUBTRACTION_OPContext ctx);
@@ -173,61 +197,61 @@ public interface CalculatorListener extends ParseTreeListener {
 	void exitExpression(@NotNull CalculatorParser.ExpressionContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code MATH_IN_PARENTH}
-	 * labeled alternative in {@link CalculatorParser#math_expression}.
+	 * labeled alternative in {@link CalculatorParser#level3prioritymath}.
 	 * @param ctx the parse tree
 	 */
 	void enterMATH_IN_PARENTH(@NotNull CalculatorParser.MATH_IN_PARENTHContext ctx);
 	/**
 	 * Exit a parse tree produced by the {@code MATH_IN_PARENTH}
-	 * labeled alternative in {@link CalculatorParser#math_expression}.
+	 * labeled alternative in {@link CalculatorParser#level3prioritymath}.
 	 * @param ctx the parse tree
 	 */
 	void exitMATH_IN_PARENTH(@NotNull CalculatorParser.MATH_IN_PARENTHContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code EXPONENT_OP}
-	 * labeled alternative in {@link CalculatorParser#math_expression}.
+	 * labeled alternative in {@link CalculatorParser#level2prioritymath}.
 	 * @param ctx the parse tree
 	 */
 	void enterEXPONENT_OP(@NotNull CalculatorParser.EXPONENT_OPContext ctx);
 	/**
 	 * Exit a parse tree produced by the {@code EXPONENT_OP}
-	 * labeled alternative in {@link CalculatorParser#math_expression}.
+	 * labeled alternative in {@link CalculatorParser#level2prioritymath}.
 	 * @param ctx the parse tree
 	 */
 	void exitEXPONENT_OP(@NotNull CalculatorParser.EXPONENT_OPContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code DIVISION_OP}
-	 * labeled alternative in {@link CalculatorParser#math_expression}.
+	 * labeled alternative in {@link CalculatorParser#level2prioritymath}.
 	 * @param ctx the parse tree
 	 */
 	void enterDIVISION_OP(@NotNull CalculatorParser.DIVISION_OPContext ctx);
 	/**
 	 * Exit a parse tree produced by the {@code DIVISION_OP}
-	 * labeled alternative in {@link CalculatorParser#math_expression}.
+	 * labeled alternative in {@link CalculatorParser#level2prioritymath}.
 	 * @param ctx the parse tree
 	 */
 	void exitDIVISION_OP(@NotNull CalculatorParser.DIVISION_OPContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code MULTIPLICATION_OP}
-	 * labeled alternative in {@link CalculatorParser#math_expression}.
+	 * labeled alternative in {@link CalculatorParser#level2prioritymath}.
 	 * @param ctx the parse tree
 	 */
 	void enterMULTIPLICATION_OP(@NotNull CalculatorParser.MULTIPLICATION_OPContext ctx);
 	/**
 	 * Exit a parse tree produced by the {@code MULTIPLICATION_OP}
-	 * labeled alternative in {@link CalculatorParser#math_expression}.
+	 * labeled alternative in {@link CalculatorParser#level2prioritymath}.
 	 * @param ctx the parse tree
 	 */
 	void exitMULTIPLICATION_OP(@NotNull CalculatorParser.MULTIPLICATION_OPContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code PI_OP}
-	 * labeled alternative in {@link CalculatorParser#math_expression}.
+	 * labeled alternative in {@link CalculatorParser#math_base}.
 	 * @param ctx the parse tree
 	 */
 	void enterPI_OP(@NotNull CalculatorParser.PI_OPContext ctx);
 	/**
 	 * Exit a parse tree produced by the {@code PI_OP}
-	 * labeled alternative in {@link CalculatorParser#math_expression}.
+	 * labeled alternative in {@link CalculatorParser#math_base}.
 	 * @param ctx the parse tree
 	 */
 	void exitPI_OP(@NotNull CalculatorParser.PI_OPContext ctx);
@@ -245,13 +269,13 @@ public interface CalculatorListener extends ParseTreeListener {
 	void exitBASE_ID_EXP(@NotNull CalculatorParser.BASE_ID_EXPContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code COSINE_OP}
-	 * labeled alternative in {@link CalculatorParser#math_expression}.
+	 * labeled alternative in {@link CalculatorParser#level3prioritymath}.
 	 * @param ctx the parse tree
 	 */
 	void enterCOSINE_OP(@NotNull CalculatorParser.COSINE_OPContext ctx);
 	/**
 	 * Exit a parse tree produced by the {@code COSINE_OP}
-	 * labeled alternative in {@link CalculatorParser#math_expression}.
+	 * labeled alternative in {@link CalculatorParser#level3prioritymath}.
 	 * @param ctx the parse tree
 	 */
 	void exitCOSINE_OP(@NotNull CalculatorParser.COSINE_OPContext ctx);
@@ -269,37 +293,47 @@ public interface CalculatorListener extends ParseTreeListener {
 	void exitCONCAT_OP(@NotNull CalculatorParser.CONCAT_OPContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code SINE_OP}
-	 * labeled alternative in {@link CalculatorParser#math_expression}.
+	 * labeled alternative in {@link CalculatorParser#level3prioritymath}.
 	 * @param ctx the parse tree
 	 */
 	void enterSINE_OP(@NotNull CalculatorParser.SINE_OPContext ctx);
 	/**
 	 * Exit a parse tree produced by the {@code SINE_OP}
-	 * labeled alternative in {@link CalculatorParser#math_expression}.
+	 * labeled alternative in {@link CalculatorParser#level3prioritymath}.
 	 * @param ctx the parse tree
 	 */
 	void exitSINE_OP(@NotNull CalculatorParser.SINE_OPContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code MODULUS_OP}
-	 * labeled alternative in {@link CalculatorParser#math_expression}.
+	 * labeled alternative in {@link CalculatorParser#level2prioritymath}.
 	 * @param ctx the parse tree
 	 */
 	void enterMODULUS_OP(@NotNull CalculatorParser.MODULUS_OPContext ctx);
 	/**
 	 * Exit a parse tree produced by the {@code MODULUS_OP}
-	 * labeled alternative in {@link CalculatorParser#math_expression}.
+	 * labeled alternative in {@link CalculatorParser#level2prioritymath}.
 	 * @param ctx the parse tree
 	 */
 	void exitMODULUS_OP(@NotNull CalculatorParser.MODULUS_OPContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link CalculatorParser#math_expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterMath_expression(@NotNull CalculatorParser.Math_expressionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link CalculatorParser#math_expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitMath_expression(@NotNull CalculatorParser.Math_expressionContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code LOG_OP}
-	 * labeled alternative in {@link CalculatorParser#math_expression}.
+	 * labeled alternative in {@link CalculatorParser#level3prioritymath}.
 	 * @param ctx the parse tree
 	 */
 	void enterLOG_OP(@NotNull CalculatorParser.LOG_OPContext ctx);
 	/**
 	 * Exit a parse tree produced by the {@code LOG_OP}
-	 * labeled alternative in {@link CalculatorParser#math_expression}.
+	 * labeled alternative in {@link CalculatorParser#level3prioritymath}.
 	 * @param ctx the parse tree
 	 */
 	void exitLOG_OP(@NotNull CalculatorParser.LOG_OPContext ctx);

@@ -6,7 +6,7 @@ import org.antlr.v4.runtime.tree.ParseTree;
 public class myVisitor extends CalculatorBaseVisitor<Object> {
 
 	public String accumulator;				// I needed a way to pass the inside result of the function that is performed to the upper one.
-	public double n1;						// I needed a way to pass the actual values if they are meaningful so that they can be processed.
+	public double n1;				 		// I needed a way to pass the actual values if they are meaningful so that they can be processed.
 	public double n2;						// Java has a weird way to "pass by reference" so these where my solution to that.
 	public boolean b1;
 	public boolean b2;
