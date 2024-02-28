@@ -5,7 +5,8 @@
 // https://stackoverflow.com/questions/47031635/antlr-parser-operator-priority#47034131
 grammar Calculator;
 statement : //futureproofing it!
-expression SEMICOLON EOF //+ = at least one
+EOF
+| expression SEMICOLON statement //+ = at least one
 ; // expression syntax
 
 
@@ -92,5 +93,5 @@ ID											#BASE_ID_EXP
 expression:					// I wanted to differentiate between logic and math expressions so that you cannot use them simultaneously because in most contexts, it doesn't make sense.
 math_expression
 | logic_expression
-| string_expression
+//| string_expression
 ;

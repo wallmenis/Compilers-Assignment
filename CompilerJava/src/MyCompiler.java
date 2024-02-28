@@ -12,12 +12,11 @@ public class MyCompiler {
         CalculatorLexer lexer = new CalculatorLexer(new ANTLRFileStream("input.txt"));        
         CalculatorParser parser = new CalculatorParser(new CommonTokenStream(lexer));        
         ParseTree tree = parser.statement();       
-        myVisitor visitor = new myVisitor();        
+        myVisitor visitor = new myVisitor();
+        visitor.calcNumber=0;						// We need the 
         visitor.visit(tree);
-        if(visitor.accumulator!=null) {					// Since we use the visitor recursively inside itself, we will print the output 
-        	System.out.println("Result = " + visitor.accumulator);	// of the accumulator here.
-        }
         TreeViewer viewer = new TreeViewer(Arrays.asList(parser.getRuleNames()),tree); // I don't know if you need it
         viewer.open();
+        System.out.println("Exited!");
 	}
 }
