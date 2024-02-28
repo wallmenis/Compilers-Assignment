@@ -12,6 +12,7 @@ public class myVisitor extends CalculatorBaseVisitor<Object> {
 	public boolean b2;
 	public String s1;
 	public String s2;
+	public int calcNumber;
 	
 	@Override
 	public Object visitADDITION_OP(CalculatorParser.ADDITION_OPContext poc) {
@@ -315,6 +316,27 @@ public class myVisitor extends CalculatorBaseVisitor<Object> {
         }
         return null;
     }
+	
+	public Object visitStatement(@NotNull CalculatorParser.StatementContext poc){
+		myVisitor expVisitor = new myVisitor(); 
+		//System.out.println("VisitedStatement");
+		expVisitor.calcNumber=this.calcNumber+1;
+		expVisitor.visit(poc.children.get(0));
+		if(expVisitor.accumulator!=null)
+		{					// Since we use the visitor recursively inside itself, we will print the output 
+			System.out.println("Result" + expVisitor.calcNumber + " = " + expVisitor.accumulator);	// of the accumulator here.
+	    }
+		myVisitor nextStatementVisitor = new myVisitor();
+		
+		if(poc.children.size()>1)
+		{
+			nextStatementVisitor.calcNumber = this.calcNumber+1;
+	        nextStatementVisitor.visit(poc.children.get(2));
+			//System.out.println(poc.children.get(2).getText());
+		}
+		//System.out.println(expVisitor.accumulator);
+		return null;
+	}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	public Object visitCONCAT_OP(@NotNull CalculatorParser.CONCAT_OPContext poc)
 	{
@@ -480,6 +502,7 @@ public class myVisitor extends CalculatorBaseVisitor<Object> {
 		}
 		return failcondition;
 	}
+	
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	public boolean StringToBool(String input)	// I didn't like how Java turns strings into booleans so I made this function.
 	{											// Specifically, I don't like the fact that it accepts "True" instead of "true"
