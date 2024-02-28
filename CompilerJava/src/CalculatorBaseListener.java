@@ -208,6 +208,18 @@ public class CalculatorBaseListener implements CalculatorListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterExit_condition(@NotNull CalculatorParser.Exit_conditionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExit_condition(@NotNull CalculatorParser.Exit_conditionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterDIVISION_OP(@NotNull CalculatorParser.DIVISION_OPContext ctx) { }
 	/**
 	 * {@inheritDoc}

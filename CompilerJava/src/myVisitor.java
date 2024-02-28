@@ -320,8 +320,13 @@ public class myVisitor extends CalculatorBaseVisitor<Object> {
 	public Object visitStatement(@NotNull CalculatorParser.StatementContext poc){
 		myVisitor expVisitor = new myVisitor(); 
 		//System.out.println("VisitedStatement");
+		
 		expVisitor.calcNumber=this.calcNumber+1;
 		expVisitor.visit(poc.children.get(0));
+		if (expVisitor.calcNumber<0)
+		{
+			this.calcNumber = -1;
+		}
 		if(expVisitor.accumulator!=null)
 		{					// Since we use the visitor recursively inside itself, we will print the output 
 			System.out.println("Result" + expVisitor.calcNumber + " = " + expVisitor.accumulator);	// of the accumulator here.
@@ -335,6 +340,10 @@ public class myVisitor extends CalculatorBaseVisitor<Object> {
 			//System.out.println(poc.children.get(2).getText());
 		}
 		//System.out.println(expVisitor.accumulator);
+		return null;
+	}
+	public Object visitExit_condition(@NotNull CalculatorParser.Exit_conditionContext poc){
+		this.calcNumber = -1;
 		return null;
 	}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////

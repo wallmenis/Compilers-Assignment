@@ -121,6 +121,12 @@ public interface CalculatorVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitEXPONENT_OP(@NotNull CalculatorParser.EXPONENT_OPContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link CalculatorParser#exit_condition}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExit_condition(@NotNull CalculatorParser.Exit_conditionContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code DIVISION_OP}
 	 * labeled alternative in {@link CalculatorParser#math_expression}.
 	 * @param ctx the parse tree

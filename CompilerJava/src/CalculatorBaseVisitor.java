@@ -129,6 +129,13 @@ public class CalculatorBaseVisitor<T> extends AbstractParseTreeVisitor<T> implem
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
+	@Override public T visitExit_condition(@NotNull CalculatorParser.Exit_conditionContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
 	@Override public T visitDIVISION_OP(@NotNull CalculatorParser.DIVISION_OPContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}

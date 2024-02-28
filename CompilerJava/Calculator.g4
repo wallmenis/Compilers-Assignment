@@ -31,6 +31,7 @@ FACTORIAL: 'fac';
 PI: 'pi';
 EULER: 'e';
 ROOT: 'root';
+EXIT: 'exit';
 
 NUM : [-]?[0-9]+ | [-]?[0-9]+ DOT [0-9]; // This used to be INTEGER | REAL but Antlr didn't like that...
 
@@ -89,9 +90,14 @@ ID											#BASE_ID_EXP
 |	math_expression ADD string_expression	#CONCAT_OP
 |	string_expression ADD math_expression	#CONCAT_OP
 ;
+
+exit_condition:
+EXIT
+;
 //expression logic
 expression:					// I wanted to differentiate between logic and math expressions so that you cannot use them simultaneously because in most contexts, it doesn't make sense.
 math_expression
 | logic_expression
+| exit_condition
 //| string_expression
 ;

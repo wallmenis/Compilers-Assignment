@@ -196,6 +196,16 @@ public interface CalculatorListener extends ParseTreeListener {
 	 */
 	void exitEXPONENT_OP(@NotNull CalculatorParser.EXPONENT_OPContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link CalculatorParser#exit_condition}.
+	 * @param ctx the parse tree
+	 */
+	void enterExit_condition(@NotNull CalculatorParser.Exit_conditionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link CalculatorParser#exit_condition}.
+	 * @param ctx the parse tree
+	 */
+	void exitExit_condition(@NotNull CalculatorParser.Exit_conditionContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code DIVISION_OP}
 	 * labeled alternative in {@link CalculatorParser#math_expression}.
 	 * @param ctx the parse tree
