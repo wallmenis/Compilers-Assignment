@@ -1,13 +1,13 @@
 import java.io.IOException;
-//import java.util.Arrays;
+import java.util.Arrays;
 
 import org.antlr.v4.runtime.ANTLRFileStream;
 import org.antlr.v4.runtime.ANTLRInputStream;
-import org.antlr.v4.runtime.ANTLRErrorListener;
+//import org.antlr.v4.runtime.ANTLRErrorListener;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 import java.util.Scanner;
-//import org.antlr.v4.runtime.tree.gui.*;
+import org.antlr.v4.runtime.tree.gui.*;
 
 public class MyCompiler {
 	public static void main(String[] args) throws IOException {
@@ -23,6 +23,8 @@ public class MyCompiler {
 	        {
 	        	visitor.visit(tree);
 	        }
+	        TreeViewer viewer = new TreeViewer(Arrays.asList(parser.getRuleNames()),tree); // I don't know if you need it
+	        viewer.open();
 		}
 		else
 		{
@@ -45,6 +47,8 @@ public class MyCompiler {
 				{
 					exit = true;
 				}
+				TreeViewer viewer = new TreeViewer(Arrays.asList(parser.getRuleNames()),tree); // I don't know if you need it
+		        viewer.open();
 			}
 			sc.close();
 			System.out.println("Exited!");
